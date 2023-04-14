@@ -2,7 +2,7 @@
   "name": "tt-apiko",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "type": "module",
   "repository": {
     "type": "git",
@@ -11,6 +11,8 @@
   "license": "ISC",
   "author": "The greatest man",
   "dependencies": {
+    "dotenv": "^16.0.3",
+    "node-fetch": "^3.3.1",
     "pg": "^8.10.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.29.3",

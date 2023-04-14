@@ -1,0 +1,47 @@
+import { OrderItem } from "sequelize"
+import { Customer } from "./Customer"
+import { ReturnAdress } from "./ReturnAdress"
+import { Shipping } from "./Shipping"
+
+export interface Order {
+  id: string,
+  email: string,
+  shipping_method: string,
+  quantity_total: number,
+  weight_total: number,
+  product_total: number,
+  shipping_total: number,
+  handling_total: number,
+  tax_total: number,
+  discount_total: number,
+  order_total: number,
+  cc_number_masked: string,
+  cc_exp: string,
+  processor_response: string,
+  payment_type: string,
+  payment_status: string,
+  processor_balance: number,
+  refund_total: number,
+  customer_id: string,
+  email_count: string,
+  ip_address: string,
+  tag_color: string,
+  source_name: string,
+  source_id: string,
+  fulfillment_name: string,
+  fulfillment_id: string,
+  tag_name: string,
+  folder_id: number,
+  previous_folder_id: string,
+  date_added: string,
+  date_updated: string,
+  shipping: Shipping,
+  customer: Customer,
+  return_address: ReturnAdress,
+  checkout_data: object[],
+  order_metadata: object[],
+  discount_list: object[],
+  order_notes: object[],
+  order_items: OrderItem[],
+  order_shipments: [] | object
+}
