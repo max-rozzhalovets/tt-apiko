@@ -1,5 +1,5 @@
-export const getNormalizedDate = () => {
-  const dateOneHourAgo = new Date(Date.now() - (1000 * 60 * 60)).toISOString();
+export const getNormalizedDate = (timeInterval: number) => {
+  const dateOneHourAgo = new Date(Date.now() - timeInterval).toISOString();
 
   return dateOneHourAgo
     .split('T')

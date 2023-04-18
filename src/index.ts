@@ -1,10 +1,16 @@
+import dotenv from 'dotenv';
 import { getNormalizedDate } from "./utils/getNormalizedDate.js";
 import { fetchNewOrders } from "./utils/fetchNewOrders.js";
 import { Response } from "./types/Response.js";
 
+dotenv.config();
+const timeInterval: number = Number(process.env.TIME_INTERVAL) || 1000 * 60 * 60;
+
+//1000 * 60 * 60 = 1 hour 
+
 setInterval(async() => {
   try {
-    const date = getNormalizedDate();
+    const date = getNormalizedDate(timeInterval);
 
     const response: Response = await fetchNewOrders(date);
   
@@ -15,4 +21,4 @@ setInterval(async() => {
   } catch (error) {
     console.log(error);
   }
-}, 1000 * 60 * 60);
+}, timeInterval);
